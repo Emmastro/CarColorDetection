@@ -6,13 +6,13 @@ import time
 
 
 from time import sleep
-from picamera import PiCamera
+#from picamera import PiCamera
 
-camera = PiCamera()
-camera.resolution = (1024, 768)
-camera.start_preview()
+#camera = PiCamera()
+#camera.resolution = (1024, 768)
+#camera.start_preview()
 # Camera warm-up time
-sleep(2)
+#sleep(2)
 
 # define the list of boundaries
 boundaries = [

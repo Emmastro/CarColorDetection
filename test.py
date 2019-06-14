@@ -9,7 +9,7 @@ import cv2
 #args = vars(ap.parse_args())
  
 # load the image
-#image = cv2.imread('yellow.jpg')#args["image"])
+image = cv2.imread('color_detection.jpg')#args["image"])
 
 
 # define the list of boundaries
@@ -22,7 +22,7 @@ boundaries = [
 	([17, 100, 15], [80, 255, 80])#green
 ]
 img = cv2.imread('color_detection.jpg')
-cap = cv2.VideoCapture(0)
+#cap = cv2.VideoCapture(0)
 #_, img = cap.read()
 
 # loop over the boundaries

@@ -16,21 +16,21 @@ from time import sleep
 
 # define the list of boundaries
 boundaries = [
-# BGR
-	([17, 15, 100], [50, 56, 255], 'red'),  # Red
-	([17, 100, 15], [80, 255, 80], 'green')  # green
+#BGR
+	([17, 15, 100], [50, 56, 255], 'red'),
+	([17, 100, 15], [80, 255, 80], 'green'),
+	([103, 86, 65], [145, 133, 128], 'yellow'), 
 ]
 #img = cv2.imread('green.png')
-cap = cv2.VideoCapture(0)
-_, img = cap.read()
-
-print("Image read ")
 
 def checkColor():
 
+	cap = cv2.VideoCapture(0)
+	_, img = cap.read()
+
 	# loop over the boundaries
 	check = []
-	print("Cheking Colors ")
+
 	for (lower, upper, color) in boundaries:
 		# create NumPy arrays from the boundaries
 		lower = np.array(lower, dtype="uint8")
@@ -47,15 +47,24 @@ def checkColor():
 		if percentage>0:
 			#print("Has {}".format(color))
 			check.append([percentage, color])
-		print('Check {}'.format(color))
 		
 	check.sort(key=lambda x: x[0])
 	return check 
 
-color = checkColor()
+while 1:
+	color = checkColor()
 
-if color!=[]:
-	print(color)
-	print(color[-1][1])
-else:
-	print("No red or green detected !")
+	if color!=[]:
+		if color=='red':
+			pass
+			#Stop
+		elif color=='yellow':
+			#slow down
+			pass
+		elif color=='green'
+			#speed up
+			pass
+		print(color)
+	else:
+		print("No red or green detected !")
+	sleep(1)
